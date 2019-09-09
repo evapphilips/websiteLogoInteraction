@@ -12,6 +12,7 @@
         var word1;
         var word2;
         var word3;
+        var description;
 
         // init funciton
         function init(){
@@ -28,25 +29,42 @@
             word2.addEventListener("mouseout", unHightlight);
             word3.addEventListener("mouseover", word3Highlight);
             word3.addEventListener("mouseout", unHightlight);
+
+            // add description
+            description = document.getElementById("description");
         }
 
 
         function word1Highlight(){
             word1.style.color = "black";
             plainLogo.src = "assets/logo2.png";
+
+            description.innerHTML = "The same symbol is used to create each letter of my name. <br>This feature represents my resourceful and inventive approach to work.";
+            description.style.visibility = "visible";
+
+
         }
         function word2Highlight(){
             word2.style.color = "black";
+            plainLogo.src = "assets/logo3.png";
+
+            description.innerHTML = "The negative space within each letter is horizontally alligned. <br>This feature represents how I am systematic and persistent.";
+            description.style.visibility = "visible";
         }
         function word3Highlight(){
             word3.style.color = "black";
+            plainLogo.src = "assets/logo4.png";
+
+            description.innerHTML = "The logo spells my first name, Eva. <br>This feature represents my sincere and diligent nature.";
+            description.style.visibility = "visible";
         }
         
         function unHightlight(){
-            word1.style.color = "gray";
-            word2.style.color = "gray";
-            word3.style.color = "gray";
+            word1.style.color = "LightGray";
+            word2.style.color = "LightGray";
+            word3.style.color = "LightGray";
             plainLogo.src = "assets/logo1.png";
+            description.style.visibility = "hidden";
         }
 
 
@@ -58,8 +76,10 @@
     <body>
         <img id="plainLogo" src="assets/logo1.png" width="25%" style="position:absolute; top:25%; left: 37.5%;"></img>
 
-        <p id="word1" style="position: absolute; top: 0%; left: 25%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">resourseful & <br>inventive</p>
-        <p id="word2" style="position: absolute; top: 0%; left: 46%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">systematic & <br>persistent</p>
-        <p id="word3" style="position: absolute; top: 0%; left: 70%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">sincere & <br>diligent</p>
+        <p id="word1" style="position: absolute; top: 0%; left: 25%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: LightGray; font-weight:bold;">resourseful & <br>inventive</p>
+        <p id="word2" style="position: absolute; top: 0%; left: 46%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:LightGray; font-weight:bold">systematic & <br>persistent</p>
+        <p id="word3" style="position: absolute; top: 0%; left: 70%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:LightGray; font-weight:bold">sincere & <br>diligent</p>
+
+        <p id="description" style="position:absolute; width: 100%; text-align: center; top:20%; visibility: hidden; font-size: 16px; font-family: Arial, Helvetica, sans-serif;" >this is a description</p>
     </body>
 </html>
