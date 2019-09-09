@@ -9,21 +9,47 @@
 
         // set variables
         var plainLogo;
+        var word1;
+        var word2;
+        var word3;
 
         // init funciton
         function init(){
+            // test blur with image
             plainLogo = document.getElementById("plainLogo");
-            plainLogo.addEventListener("mouseover", blurImg);
-            plainLogo.addEventListener("mouseout", unBlurImg);
+   
+            // add mouse over event listners to words
+            word1 = document.getElementById("word1");
+            word2 = document.getElementById("word2");
+            word3 = document.getElementById("word3");
+            word1.addEventListener("mouseover", word1Highlight);
+            word1.addEventListener("mouseout", unHightlight);
+            word2.addEventListener("mouseover", word2Highlight);
+            word2.addEventListener("mouseout", unHightlight);
+            word3.addEventListener("mouseover", word3Highlight);
+            word3.addEventListener("mouseout", unHightlight);
         }
 
-        function blurImg(){
-            plainLogo.style.filter = "blur(5px)";
+
+        function word1Highlight(){
+            word1.style.color = "black";
+            plainLogo.src = "assets/logo2.png";
+        }
+        function word2Highlight(){
+            word2.style.color = "black";
+        }
+        function word3Highlight(){
+            word3.style.color = "black";
+        }
+        
+        function unHightlight(){
+            word1.style.color = "gray";
+            word2.style.color = "gray";
+            word3.style.color = "gray";
+            plainLogo.src = "assets/logo1.png";
         }
 
-        function unBlurImg(){
-            plainLogo.style.filter = "blur(0px)";
-        }
+
 
         //position: absolute;top: 10%; width: 100%; text-align: center; font-size: 18px; font-family: Arial, Helvetica, sans-serif;
         </script>
@@ -32,8 +58,8 @@
     <body>
         <img id="plainLogo" src="assets/logo1.png" width="25%" style="position:absolute; top:25%; left: 37.5%;"></img>
 
-        <p id="description1" style="position: absolute; top: 0%; left: 25%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif;">resourseful & <br>inventive</p>
-        <p id="description2" style="position: absolute; top: 0%; left: 46%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif;">systematic & <br>persistent</p>
-        <p id="description3" style="position: absolute; top: 0%; left: 70%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif;">sincere & <br>diligent</p>
+        <p id="word1" style="position: absolute; top: 0%; left: 25%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">resourseful & <br>inventive</p>
+        <p id="word2" style="position: absolute; top: 0%; left: 46%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">systematic & <br>persistent</p>
+        <p id="word3" style="position: absolute; top: 0%; left: 70%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:gray; font-weight:bold">sincere & <br>diligent</p>
     </body>
 </html>
