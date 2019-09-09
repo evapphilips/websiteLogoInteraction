@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Logo Interaction</title>
+
+        <script type="text/javascript">
+
+        // when page loads, run the init funciton
+        window.addEventListener("load", init);
+
+        // set variables
+        var plainLogo;
+
+        // init funciton
+        function init(){
+            plainLogo = document.getElementById("plainLogo");
+            plainLogo.addEventListener("mouseover", blurImg);
+            plainLogo.addEventListener("mouseout", unBlurImg);
+        }
+
+        function blurImg(){
+            plainLogo.style.filter = "blur(5px)";
+        }
+
+        function unBlurImg(){
+            plainLogo.style.filter = "blur(0px)";
+        }
+        </script>
+    </head>
+
+    <body>
+        <img id="plainLogo" src="/assets/logo1.png" width="25%" style="position:absolute; top:25%; left: 37.5%;"></img>
+    </body>
+</html>
