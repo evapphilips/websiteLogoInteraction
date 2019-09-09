@@ -1,8 +1,18 @@
-<html>
-    <head>
-        <title>Logo Interaction</title>
+<!doctype html>
+<html ang="en">
 
-        <script type="text/javascript">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Logo Interaction</title>
+
+    <script type="text/javascript">
 
         // when page loads, run the init funciton
         window.addEventListener("load", init);
@@ -15,10 +25,10 @@
         var description;
 
         // init funciton
-        function init(){
+        function init() {
             // test blur with image
             plainLogo = document.getElementById("plainLogo");
-   
+
             // add mouse over event listners to words
             word1 = document.getElementById("word1");
             word2 = document.getElementById("word2");
@@ -35,7 +45,7 @@
         }
 
 
-        function word1Highlight(){
+        function word1Highlight() {
             word1.style.color = "black";
             plainLogo.src = "assets/logo2.png";
 
@@ -44,22 +54,22 @@
 
 
         }
-        function word2Highlight(){
+        function word2Highlight() {
             word2.style.color = "black";
             plainLogo.src = "assets/logo3.png";
 
             description.innerHTML = "The negative space within each letter is horizontally alligned. <br>This feature represents how I am systematic and persistent.";
             description.style.visibility = "visible";
         }
-        function word3Highlight(){
+        function word3Highlight() {
             word3.style.color = "black";
             plainLogo.src = "assets/logo4.png";
 
             description.innerHTML = "The logo spells my first name, Eva. <br>This feature represents my sincere and diligent nature.";
             description.style.visibility = "visible";
         }
-        
-        function unHightlight(){
+
+        function unHightlight() {
             word1.style.color = "LightGray";
             word2.style.color = "LightGray";
             word3.style.color = "LightGray";
@@ -70,16 +80,84 @@
 
 
         //position: absolute;top: 10%; width: 100%; text-align: center; font-size: 18px; font-family: Arial, Helvetica, sans-serif;
-        </script>
-    </head>
+    </script>
+</head>
 
-    <body>
-        <img id="plainLogo" src="assets/logo1.png" width="25%" style="position:absolute; top:25%; left: 37.5%;"></img>
+<body>
+        
+    <div class="container">
+            <div class="row">
+            </div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
 
-        <p id="word1" style="position: absolute; top: 0%; left: 25%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: LightGray; font-weight:bold;">resourseful & <br>inventive</p>
-        <p id="word2" style="position: absolute; top: 0%; left: 46%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:LightGray; font-weight:bold">systematic & <br>persistent</p>
-        <p id="word3" style="position: absolute; top: 0%; left: 70%; width: 100%; font-size: 18px; font-family: Arial, Helvetica, sans-serif; color:LightGray; font-weight:bold">sincere & <br>diligent</p>
+    <div class="container">
+            <div class="row">
+            </div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
 
-        <p id="description" style="position:absolute; width: 100%; text-align: center; top:20%; visibility: hidden; font-size: 16px; font-family: Arial, Helvetica, sans-serif;" >this is a description</p>
-    </body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-4" id="word1" style="text-align: center">
+                resourseful & inventive
+            </div>
+            <div class="col-sm-4 col-xs-4" id="word2" style="text-align: center">
+                systematic & persistent
+            </div>
+            <div class="col-sm-4 col-xs-4" id="word3" style="text-align: center">
+                sincere & diligent
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12"><p></p></div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-3"></div>
+
+                <div class="col-sm-6 col-xs-6" id="description" style="text-align: center; visibility: hidden">this is the description</div>
+
+                <div class="col-sm-3 col-xs-3"></div>
+            </div>
+    </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <img id="plainLogo" src="assets/logo1.png" width="40%" style="display: block; margin-left: auto; margin-right: auto;"></img>
+                </div>
+    </div>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
