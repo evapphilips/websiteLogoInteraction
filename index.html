@@ -2,6 +2,8 @@
 <html ang="en">
 
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,9 +11,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <title>Logo Interaction</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 
         // when page loads, run the init funciton
@@ -19,15 +21,20 @@
 
         // set variables
         var plainLogo;
+        var topLogo;
         var word1;
         var word2;
         var word3;
         var description;
+        var topLogo;
+        var overLastWord = false;
+        var op = 1.0;
 
         // init funciton
         function init() {
             // test blur with image
             plainLogo = document.getElementById("plainLogo");
+            topLogo = document.getElementById("topLogo");
 
             // add mouse over event listners to words
             word1 = document.getElementById("word1");
@@ -42,31 +49,51 @@
 
             // add description
             description = document.getElementById("description");
+
+            setInterval(fading, 50);
         }
 
 
         function word1Highlight() {
+            topLogo.style.visibility = "hidden";
             word1.style.color = "black";
             plainLogo.src = "assets/logo2-1.png";
 
-            description.innerHTML = "The same symbol is used to create all three letters of my name.";
+            description.innerHTML = "I use the tools I have on hand to imagine what's possible.";
             description.style.visibility = "visible";
 
 
         }
         function word2Highlight() {
+            topLogo.style.visibility = "hidden";
             word2.style.color = "black";
             plainLogo.src = "assets/logo3-1.png";
 
-            description.innerHTML = "The negative space within each letter is horizontally alligned.";
+            description.innerHTML = "I value a balance between creativity and order.";
             description.style.visibility = "visible";
         }
         function word3Highlight() {
             word3.style.color = "black";
-            plainLogo.src = "assets/logo4-1.png";
 
-            description.innerHTML = "The logo spells my first name, Eva.";
+            topLogo.style.visibility = "visible";
+            description.innerHTML = "I take a stand, and see it through.";
             description.style.visibility = "visible";
+
+            overLastWord = true;
+        }
+
+        function fading() {
+            if(overLastWord){
+                topLogo.style.opacity = op;
+                if(op>0){
+                    op -= 0.0125;
+                    topLogo.style.opacity = op;
+                }else{
+                    return
+                }
+            }else{
+                op = 1.0;
+            }
         }
 
         function unHightlight() {
@@ -75,6 +102,9 @@
             word3.style.color = "LightGray";
             plainLogo.src = "assets/logo1-1.png";
             description.style.visibility = "hidden";
+
+            topLogo.style.visibility = "hidden";
+            overLastWord = false;
         }
 
 
@@ -114,11 +144,7 @@
                 <div class="col-sm-12 col-xs-12"><p></p></div>
     </div>
 
-    <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-xs-12" id="description" style="text-align: center; visibility: hidden">this is the description</div>
-            </div>
-    </div>
+    
 
     <div class="container">
         <div class="row">
@@ -128,9 +154,22 @@
     <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
-                    <img id="plainLogo" src="assets/logo1-1.png" width="40%" style="display: block; margin-left: auto; margin-right: auto;"></img>
+                    <img id="topLogo" src="assets/logo5.png" width="39%" style="display: block; margin-left: auto; margin-right: auto; position:absolute; top:0.25%; left:30.6%; visibility: hidden; opacity: 1.0"></img>
+                    <img id="plainLogo" src="assets/logo1-1.png" width="40%" style="display: block; margin-left: auto; margin-right: auto;"></img>  
                 </div>
     </div>
+
+    <div class="container">
+            <div class="row">
+            </div class="col-sm-12 col-xs-12"><p></p></div>
+        </div>
+
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12" id="description" style="text-align: center; visibility: hidden">this is the description</div>
+            </div>
+    </div>
+    
 
     
     <!-- Optional JavaScript -->
